@@ -1,0 +1,43 @@
+<table
+    data-toggle="table"
+    data-classes="table table-hover"
+    data-search="true"
+    data-show-multi-sort="true"
+    data-pagination="true">
+    <thead>
+        <tr>
+            <th>Filme</th>
+            <th>Prêmio</th>
+            <th>Ano</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for filme_premio in filme_premios %}
+        <tr>
+            <td>{{ filme_premio.filme.titulo }}</td>
+            <td>{{ filme_premio.premio.descricao }}</td>
+            <td>{{ filme_premio.ano }}</td>
+            <td>
+                <a href="{{ path('filme_premio_edit', {'id': filme_premio.id}) }}">
+                    <i class="bi bi-pencil" style="font-size: 2rem; color: black;" 
+                        data-toggle="tooltip" 
+                        data-placement="top" 
+                        title="Editar"></i></a>
+            </td>
+            <td>
+                {{ include('_common/_delete.html.twig', {
+                    'item': filme_premio,
+                    'rota': path('filme_premio_delete', {'id': filme_premio.id})
+                    })
+                }}
+            </td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="3">no records found</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

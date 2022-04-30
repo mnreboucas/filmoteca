@@ -1,0 +1,19 @@
+{% extends '_common/base.html.twig' %}
+
+{% block title %}Premiações{% endblock %}
+
+{% block body %}
+    {% include "_common/header.html.twig" with {
+        'icone': 'fa-solid fa-award mr-2',
+        'titulo': 'Cadastro de Premiações',
+        'rota': '#',
+        'index': path('filme_premio_index')
+    } %}
+
+    {% include "filme_premio/_form.html.twig" %}
+
+    <div class="row border border-primary border-3 mt-2"></div>
+
+    {% include "filme_premio/_table.html.twig" %}
+
+{% endblock %}

@@ -1,0 +1,11 @@
+<form method="post" action="{{ rota }}" 
+    onsubmit="return confirm('Tem certeza que deseja deletar este item?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ item.id) }}">
+    <button class="btn btn-link d-print-none">
+        <i class="fas fa-trash-alt fa-2x"
+            style="color:red"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Apagar Registro"></i>
+    </button>
+</form>

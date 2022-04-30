@@ -1,0 +1,21 @@
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-auto">
+            <strong>{{ form_label(form.ano) }}</strong>
+            {{ form_widget(form.ano) }}
+        </div>
+        <div class="col-md-auto">
+            <strong>{{ form_label(form.filme) }}</strong>
+            {{ form_widget(form.filme) }}
+        </div>
+        <div class="col-md-auto">
+            <strong>{{ form_label(form.premio) }}</strong>
+            {{ form_widget(form.premio) }}
+        </div>
+    </div>
+    <div class="row pt-2">
+        <div class="col">
+            <button class="btn btn-primary">{{ button_label|default('Salvar') }}</button>
+        </div>
+    </div>
+{{ form_end(form) }}

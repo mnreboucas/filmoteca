@@ -1,0 +1,19 @@
+{% extends '_common/base.html.twig' %}
+
+{% block title %}Filme{% endblock %}
+
+{% block body %}
+    {% include "_common/header.html.twig" with {
+        'icone': 'fa-solid fa-filme mr-2',
+        'titulo': 'Cadastro de Filme',
+        'rota': '#',
+        'index': path('filme_index')
+    } %}
+
+    {% include "filme/_form.html.twig" %}
+
+    <div class="row border border-primary border-3 mt-2"></div>
+
+    {% include "filme/_table.html.twig" %}
+
+{% endblock %}

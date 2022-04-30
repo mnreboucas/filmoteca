@@ -1,0 +1,51 @@
+<table
+    data-toggle="table"
+    data-classes="table table-hover"
+    data-search="true"
+    data-show-multi-sort="true"
+    data-pagination="true">
+    <thead>
+        <tr>
+            <th data-sortable="true">Título</th>
+            <th data-sortable="true">Gênero</th>
+            <th data-sortable="true">Ano</th>
+            <th data-sortable="true">País</th>
+            <th data-sortable="true">Diretor</th>
+            <th data-sortable="true">Localização</th>
+            <th>Observação</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for filme in filmes %}
+        <tr>
+            <td>{{ filme.titulo }}</td>
+            <td>{{ filme.genero.descricao }}</td>
+            <td>{{ filme.ano }}</td>
+            <td>{{ filme.pais }}</td>
+            <td>{{ filme.diretor }}</td>
+            <td>{{ filme.localizacao }}</td>
+            <td>{{ filme.observacao }}</td>
+            <td>
+                <a href="{{ path('filme_edit', {'id': filme.id}) }}">
+                    <i class="bi bi-pencil" style="font-size: 2rem; color: black;" 
+                        data-toggle="tooltip" 
+                        data-placement="top" 
+                        title="Editar"></i></a>
+            </td>
+            <td>
+                {{ include('_common/_delete.html.twig', {
+                    'item': filme,
+                    'rota': path('filme_delete', {'id': filme.id})
+                    })
+                }}
+            </td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="8">Nenhum registro encontrado</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

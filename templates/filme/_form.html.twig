@@ -1,0 +1,37 @@
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-auto">
+            <strong>{{ form_label(form.titulo) }}</strong>
+            {{ form_widget(form.titulo) }}
+        </div>
+        <div class="col-md-auto">
+            <strong>{{ form_label(form.ano) }}</strong>
+            {{ form_widget(form.ano) }}
+        </div>
+        <div class="col-md-auto">
+            <strong>{{ form_label(form.pais) }}</strong>
+            {{ form_widget(form.pais) }}
+        </div>
+        <div class="col-md-auto">
+            <strong>{{ form_label(form.diretor) }}</strong>
+            {{ form_widget(form.diretor) }}
+        </div>
+        <div class="col-md-auto">
+            <strong>{{ form_label(form.localizacao) }}</strong>
+            {{ form_widget(form.localizacao) }}
+        </div>
+        <div class="col-md-auto">
+            <strong>{{ form_label(form.genero) }}</strong>
+            {{ form_widget(form.genero) }}
+        </div>
+        <div class="col-md-auto">
+            <strong>{{ form_label(form.observacao) }}</strong>
+            {{ form_widget(form.observacao) }}
+        </div>
+    </div>
+    <div class="row pt-2">
+        <div class="col">
+            <button class="btn btn-primary">{{ button_label|default('Salvar') }}</button>
+        </div>
+    </div>
+{{ form_end(form) }}

@@ -1,0 +1,15 @@
+{{ form_start(form) }}
+    <div class="row align-items-center">
+        <div class="col">
+            <strong>{{ form_label(form.descricao) }}</strong>
+            {{ form_widget(form.descricao) }}
+        </div>
+         <div class="col-md-auto">
+            {{ form_widget(form.ativo) }}
+        </div>
+        <div class="col-md-auto">
+            <button class="btn btn-primary">{{ button_label|default('Salvar') }}</button>
+        </div>
+
+    </div>
+{{ form_end(form) }}

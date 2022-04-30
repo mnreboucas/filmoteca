@@ -1,0 +1,15 @@
+{% extends '_common/base.html.twig' %}
+
+{% block title %}Prêmio{% endblock %}
+
+{% block body %}
+    {% include "_common/header.html.twig" with {
+        'icone': 'fa-solid fa-award mr-2',
+        'titulo': 'Cadastro de Prêmio',
+        'rota': path('premio_new'),
+        'index': path('premio_index')
+    } %}
+
+    {% include "premio/_table.html.twig" %}
+
+{% endblock %}

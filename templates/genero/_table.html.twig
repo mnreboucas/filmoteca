@@ -1,0 +1,40 @@
+<table
+    data-toggle="table"
+    data-classes="table table-hover"
+    data-search="true"
+    data-pagination="true">
+    <thead>
+        <tr>
+            <th>Descrição</th>
+            <th>Ativo</th>
+            <th></th> {# Editar #}
+            <th></th> {# Apagar #}
+        </tr>
+    </thead>
+    <tbody>
+    {% for genero in generos %}
+        <tr>
+            <td>{{ genero.descricao }}</td>
+            <td>{{ genero.ativo|ativo}}</td>
+            <td>
+                <a href="{{ path('genero_edit', {'id': genero.id}) }}">
+                    <i class="bi bi-pencil" style="font-size: 2rem; color: black;" 
+                        data-toggle="tooltip" 
+                        data-placement="top" 
+                        title="Editar"></i></a>
+            </td>
+            <td>
+                {{ include('_common/_delete.html.twig', {
+                    'item': genero,
+                    'rota': path('genero_delete', {'id': genero.id})
+                    })
+                }}
+            </td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="4">Nenhum registro encontrado.</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

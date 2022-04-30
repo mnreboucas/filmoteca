@@ -1,0 +1,18 @@
+<div class="row align-items-center pt-2">
+    <div class="col-md-4">
+        <h3><i class="{{ icone }}"></i> {{ titulo }}</h3>
+    </div>
+    {% if rota != '#' %}
+    <div class="col-auto ms-auto d-print-none">
+        <a href="{{ rota }}">
+            <h5><strong><i class="fas fa-plus-square"></i> Novo</strong></h5>
+        </a>
+    </div>
+    {% else %}
+        <div class="col-auto ms-auto d-print-none">
+            <a href="{{ index }}">
+                <h5><strong><i class="fa-solid fa-circle-arrow-left"></i> Voltar</strong></h5>
+            </a>
+        </div>
+    {% endif %}
+</div>
