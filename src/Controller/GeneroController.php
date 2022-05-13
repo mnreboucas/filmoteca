@@ -36,7 +36,7 @@ class GeneroController extends AbstractController
             $entityManager->persist($genero);
             $entityManager->flush();
 
-            return $this->redirectToRoute('genero_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('genero_new', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('genero/new_edit.html.twig', [

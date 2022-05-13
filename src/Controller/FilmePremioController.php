@@ -36,7 +36,7 @@ class FilmePremioController extends AbstractController
             $entityManager->persist($filmePremio);
             $entityManager->flush();
 
-            return $this->redirectToRoute('filme_premio_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('filme_premio_new', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('filme_premio/new_edit.html.twig', [
